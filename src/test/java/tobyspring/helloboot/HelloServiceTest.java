@@ -9,17 +9,6 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 import static org.assertj.core.api.Assertions.*;
-@Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
-@UnitTest
-@interface FastUnitTest {
-}
-
-@Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.ANNOTATION_TYPE, ElementType.METHOD})
-@Test
-@interface UnitTest {
-}
 
 public class HelloServiceTest {
     @Test
@@ -40,10 +29,3 @@ public class HelloServiceTest {
         Assertions.assertThat(ret).isEqualTo("*Test*");
     }
 }
-
-/**
- * 메타 애노테이션을 하나 이상을 적용해서 만드는 에노테이션 == 합성 애노테이션
- *
- * ex) @RestController -> @Controller -> @Component
- *                     -> @ResponseBody
- */
