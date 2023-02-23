@@ -9,8 +9,4 @@ import org.springframework.web.servlet.DispatcherServlet;
 
 @Configuration
 public class Config {
-    @Bean
-    public DispatcherServlet dispatcherServlet() {
-        return new DispatcherServlet();
-    }
 }
